@@ -1,0 +1,121 @@
+/* ==========================================================
+   RESPONSIVE - NUTRICONTROL
+   BASE
+==========================================================*/
+
+/* Nunca permitir scroll horizontal */
+
+html,
+body{
+
+    overflow-x:hidden;
+
+}
+
+/* Todo calcula correctamente los anchos */
+
+*{
+
+    box-sizing:border-box;
+
+}
+
+/* Las imágenes nunca romperán el diseño */
+
+img{
+
+    max-width:100%;
+    height:auto;
+
+}
+
+/* El contenido principal nunca será más ancho que la pantalla */
+
+.main-content{
+
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+
+}
+
+/* El encabezado se adapta automáticamente */
+
+.page-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+/* El texto ocupa el espacio disponible */
+
+.page-header>div{
+
+    flex:1;
+    min-width:280px;
+
+}
+
+/* El botón nunca se sale */
+
+.page-header .btn{
+
+    flex-shrink:0;
+
+}
+
+/* Todas las tablas tendrán scroll horizontal */
+
+.table-container{
+
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+    -webkit-overflow-scrolling:touch;
+
+}
+
+/* Las tablas no romperán el layout */
+
+.table{
+
+    width:100%;
+    min-width:900px;
+
+}
+
+/* Los formularios nunca se saldrán */
+
+.form-card{
+
+    width:100%;
+    max-width:100%;
+
+}
+
+/* Los inputs nunca crecerán de más */
+
+.form-control,
+.form-select,
+textarea{
+
+    max-width:100%;
+
+}
+
+/* Las tarjetas nunca romperán el diseño */
+
+.card,
+.dashboard-card,
+.stat-card,
+.detalle-card,
+.reporte-card{
+
+    width:100%;
+    max-width:100%;
+
+}

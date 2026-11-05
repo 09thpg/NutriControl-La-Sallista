@@ -1,0 +1,288 @@
+/* =========================================================
+   AYUDA FLOTANTE + CONFIRMACIÓN DE ELIMINACIÓN
+   NutriControl La Sallista
+========================================================= */
+
+.help-floating-button {
+    position: fixed;
+    right: 26px;
+    bottom: 24px;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 50%;
+    background: #2563eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 2100;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .35);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.help-floating-button:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .42);
+    background: #1d4ed8;
+}
+
+.help-floating-button:focus-visible {
+    outline: 3px solid rgba(147, 197, 253, .9);
+    outline-offset: 3px;
+}
+
+.help-panel {
+    position: fixed;
+    right: 26px;
+    bottom: 92px;
+    width: min(390px, calc(100vw - 32px));
+    max-height: min(72vh, 620px);
+    overflow-y: auto;
+    background: #1f2937;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    box-shadow: 0 20px 55px rgba(0,0,0,.45);
+    z-index: 2050;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px) scale(.98);
+    transform-origin: bottom right;
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+
+.help-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.help-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.help-panel-title {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.help-panel-title i {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #2563eb;
+}
+
+.help-panel-title h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.help-panel-title p {
+    margin: 2px 0 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.help-close {
+    border: 0;
+    background: transparent;
+    color: #cbd5e1;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.help-close:hover {
+    background: rgba(255,255,255,.08);
+    color: #fff;
+}
+
+.help-current {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 13px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.help-current h4 {
+    margin: 0 0 9px;
+    font-size: 15px;
+}
+
+.help-current ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.help-current li {
+    margin: 7px 0;
+    color: #dbeafe;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.help-all-title {
+    font-size: 13px;
+    color: #94a3b8;
+    margin: 0 0 9px;
+    font-weight: 600;
+}
+
+.help-section-list {
+    display: grid;
+    gap: 7px;
+}
+
+.help-section-button {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,.06);
+    background: #273449;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    transition: background .15s ease, transform .15s ease;
+}
+
+.help-section-button:hover,
+.help-section-button.active {
+    background: #2563eb;
+    transform: translateX(2px);
+}
+
+.help-section-button i {
+    width: 20px;
+    text-align: center;
+}
+
+/* =========================================================
+   MODAL DE CONFIRMACIÓN
+========================================================= */
+
+.delete-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, .72);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .18s ease, visibility .18s ease;
+}
+
+.delete-modal-backdrop.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.delete-modal {
+    width: min(430px, 100%);
+    background: #1f2937;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 25px 70px rgba(0,0,0,.5);
+    transform: translateY(10px) scale(.98);
+    transition: transform .18s ease;
+}
+
+.delete-modal-backdrop.open .delete-modal {
+    transform: translateY(0) scale(1);
+}
+
+.delete-modal-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(239,68,68,.14);
+    color: #f87171;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.delete-modal h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.delete-modal p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.delete-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.delete-modal-actions button {
+    border: 0;
+    border-radius: 10px;
+    padding: 11px 17px;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.delete-cancel {
+    background: #475569;
+    color: #fff;
+}
+
+.delete-confirm {
+    background: #ef4444;
+    color: #fff;
+}
+
+.delete-confirm:hover {
+    background: #dc2626;
+}
+
+@media (max-width: 600px) {
+    .help-floating-button {
+        right: 16px;
+        bottom: 16px;
+    }
+
+    .help-panel {
+        right: 16px;
+        bottom: 84px;
+        width: calc(100vw - 32px);
+        max-height: 70vh;
+    }
+}

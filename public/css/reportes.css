@@ -1,0 +1,152 @@
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.page-header h2{
+    color:#ffffff;
+    font-size:34px;
+    font-weight:700;
+    margin:0;
+}
+
+.page-header p{
+    color:#94a3b8;
+    margin-top:8px;
+}
+
+.cards-reportes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:35px;
+}
+
+.card-reporte{
+    background:#1f2937;
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    transition:.25s;
+}
+
+.card-reporte:hover{
+    transform:translateY(-5px);
+}
+
+.card-reporte i{
+    font-size:40px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.card-reporte h3{
+    color:#ffffff;
+    font-size:34px;
+    margin:10px 0;
+    font-weight:700;
+}
+
+.card-reporte p{
+    color:#94a3b8;
+    margin:0;
+    font-size:15px;
+}
+
+.reporte-grid{
+    display:grid;
+    gap:25px;
+}
+
+.reporte-card{
+    background:#1f2937;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.reporte-card h3{
+    color:#ffffff;
+    font-size:22px;
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.reporte-card h3 i{
+    color:#2563eb;
+}
+
+.table{
+    width:100%;
+    border-collapse:collapse;
+    margin:0;
+    background:transparent !important;
+}
+
+.table thead tr{
+    background:#2563eb;
+}
+
+.table thead th{
+    color:#ffffff !important;
+    padding:16px;
+    text-align:center;
+    border:none;
+}
+
+.table tbody td{
+    background:#1f2937 !important;
+    color:#ffffff !important;
+    border-top:1px solid #334155;
+    padding:16px;
+    text-align:center;
+}
+
+.table tbody tr:hover{
+    background:#293548;
+}
+
+@media(max-width:992px){
+
+    .cards-reportes{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cards-reportes{
+        grid-template-columns:1fr;
+    }
+
+    .table{
+        min-width:800px;
+    }
+
+    .page-header h2{
+        font-size:28px;
+    }
+
+}
+
+.btn-pdf {
+    background: #dc2626;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    box-shadow: 0 10px 24px rgba(220, 38, 38, .22);
+}
+
+.btn-pdf:hover {
+    background: #b91c1c;
+    color: #ffffff;
+}

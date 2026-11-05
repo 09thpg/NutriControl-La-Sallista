@@ -1,0 +1,315 @@
+.usuarios-lista{
+display:flex;
+flex-direction:column;
+gap:22px;
+margin-top:30px;
+}
+
+.usuario-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#232d3f;
+border-radius:18px;
+padding:22px 28px;
+border:1px solid rgba(255,255,255,.05);
+transition:.25s;
+box-shadow:0 10px 25px rgba(0,0,0,.20);
+}
+
+.usuario-item:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 35px rgba(0,0,0,.30);
+}
+
+.usuario-izquierda{
+display:flex;
+align-items:center;
+gap:20px;
+flex:1;
+}
+
+.usuario-avatar{
+width:72px;
+height:72px;
+border-radius:50%;
+border:3px solid #2563eb;
+object-fit:cover;
+flex-shrink:0;
+}
+
+.usuario-datos h3{
+margin:0 0 8px;
+font-size:24px;
+font-weight:700;
+color:#fff;
+}
+
+.usuario-datos p{
+margin:5px 0;
+font-size:15px;
+color:#cbd5e1;
+}
+
+.usuario-datos strong{
+color:#fff;
+}
+
+.usuario-derecha{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.fecha{
+font-size:14px;
+color:#94a3b8;
+margin:0;
+white-space:nowrap;
+}
+
+.acciones{
+display:flex;
+gap:10px;
+}
+
+.btn-action{
+width:42px;
+height:42px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:10px;
+color:#fff;
+text-decoration:none;
+font-size:16px;
+transition:.25s;
+}
+
+.btn-action:hover{
+transform:scale(1.08);
+}
+
+.btn-info{
+background:#0ea5e9;
+}
+
+.btn-warning{
+background:#f59e0b;
+}
+
+.btn-danger{
+background:#ef4444;
+}
+
+.badge{
+padding:7px 18px;
+border-radius:30px;
+font-size:13px;
+font-weight:600;
+white-space:nowrap;
+}
+
+.badge.usuario{
+background:#2563eb;
+color:#fff;
+}
+
+.badge.administrador{
+background:#16a34a;
+color:#fff;
+}
+
+.sin-registros{
+background:#232d3f;
+padding:40px;
+border-radius:16px;
+text-align:center;
+font-size:18px;
+color:#fff;
+}
+
+@media(max-width:1000px){
+
+.usuario-item{
+flex-direction:column;
+align-items:flex-start;
+gap:20px;
+}
+
+.usuario-derecha{
+width:100%;
+justify-content:space-between;
+}
+
+}
+
+@media(max-width:700px){
+
+.usuario-izquierda{
+flex-direction:column;
+align-items:center;
+text-align:center;
+}
+
+.usuario-derecha{
+flex-direction:column;
+align-items:center;
+gap:15px;
+}
+
+.usuario-avatar{
+width:85px;
+height:85px;
+}
+
+}
+
+/* =========================================================
+   BOTONES DE NAVEGACIÓN ENTRE LLEGADA Y CIERRE
+   ========================================================= */
+
+.registro-nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    min-width: 190px;
+    min-height: 52px;
+
+    padding: 0 20px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-sizing: border-box;
+}
+
+
+/* ICONO */
+
+.registro-nav-button i {
+    font-size: 18px;
+
+    flex-shrink: 0;
+}
+
+
+/* TEXTO */
+
+.registro-nav-button span {
+    white-space: nowrap;
+}
+
+
+/* BOTÓN CIERRE */
+
+.registro-nav-button-cierre {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border: 1px solid #3b82f6;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+
+/* BOTÓN LLEGADA */
+
+.registro-nav-button-llegada {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    border: 1px solid #3b82f6;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.25);
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.registro-nav-button:hover {
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+
+/* EFECTO AL PRESIONAR */
+
+.registro-nav-button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   ENCABEZADO DE REGISTRO
+   ========================================================= */
+
+.registro-page-header-actions {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .registro-nav-button {
+
+        min-width: 170px;
+
+        min-height: 48px;
+
+        padding: 0 16px;
+
+        font-size: 15px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .registro-nav-button {
+
+        min-width: 0;
+
+        width: 100%;
+
+        padding: 0 14px;
+    }
+
+}

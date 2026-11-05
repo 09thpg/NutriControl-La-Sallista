@@ -1,0 +1,711 @@
+/* =========================================================
+   SIDEBAR - NUTRICONTROL
+========================================================= */
+
+.sidebar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 290px;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    transition: width .30s ease;
+
+    z-index: 1000;
+
+}
+
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.sidebar-logo {
+
+    height: 185px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 15px 20px;
+
+    position: relative;
+
+}
+
+
+.sidebar-logo img {
+
+    width: 72px;
+    height: 72px;
+
+    object-fit: contain;
+
+    margin-bottom: 8px;
+
+}
+
+
+.sidebar-logo h2 {
+
+    margin: 0;
+
+    font-size: 24px;
+
+}
+
+
+.sidebar-logo span {
+
+    margin-top: 2px;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================================
+   MENÚ
+========================================================= */
+
+.sidebar-menu {
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 28px 14px 20px;
+
+}
+
+
+.sidebar-menu li {
+
+    margin-bottom: 7px;
+
+}
+
+
+.sidebar-menu li a {
+
+    min-height: 54px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+
+.sidebar-menu li a i {
+
+    width: 24px;
+
+    min-width: 24px;
+
+    text-align: center;
+
+    font-size: 19px;
+
+}
+
+
+.sidebar-menu li a span {
+
+    white-space: nowrap;
+
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.sidebar-menu li a:hover {
+
+    transform: translateX(3px);
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.sidebar-footer {
+
+    padding: 10px 14px 25px;
+
+}
+
+
+.sidebar-footer a {
+
+    min-height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+}
+
+
+.sidebar-footer i {
+
+    width: 24px;
+
+    min-width: 24px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   SIDEBAR CONTRAÍDO
+========================================================= */
+
+.sidebar.collapsed {
+
+    width: 92px;
+
+}
+
+
+/* =========================================================
+   LOGO CONTRAÍDO
+========================================================= */
+
+.sidebar.collapsed .sidebar-logo {
+
+    height: 100px;
+
+    padding: 10px;
+
+}
+
+
+.sidebar.collapsed .sidebar-logo img {
+
+    width: 60px;
+    height: 60px;
+
+    margin: 0;
+
+}
+
+
+.sidebar.collapsed .sidebar-logo h2,
+.sidebar.collapsed .sidebar-logo span {
+
+    display: none;
+
+}
+
+
+
+/* =========================================================
+   MENÚ CONTRAÍDO
+========================================================= */
+
+.sidebar.collapsed .sidebar-menu {
+
+    padding: 28px 10px 20px;
+
+}
+
+
+.sidebar.collapsed .sidebar-menu li {
+
+    margin-bottom: 7px;
+
+}
+
+
+.sidebar.collapsed .sidebar-menu li a {
+
+    min-height: 54px;
+
+    justify-content: center;
+
+    gap: 0;
+
+    padding: 12px 5px;
+
+}
+
+
+.sidebar.collapsed .sidebar-menu li a span {
+
+    display: none;
+
+}
+
+
+.sidebar.collapsed .sidebar-menu li a i {
+
+    width: auto;
+
+    min-width: auto;
+
+    font-size: 19px;
+
+}
+
+
+/* =========================================================
+   FOOTER CONTRAÍDO
+========================================================= */
+
+.sidebar.collapsed .sidebar-footer {
+
+    padding: 10px;
+
+}
+
+
+.sidebar.collapsed .sidebar-footer a {
+
+    justify-content: center;
+
+    gap: 0;
+
+    padding: 12px 5px;
+
+}
+
+
+.sidebar.collapsed .sidebar-footer span {
+
+    display: none;
+
+}
+
+
+.sidebar.collapsed .sidebar-footer i {
+
+    width: auto;
+
+    min-width: auto;
+
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+========================================================= */
+
+.main-content {
+
+    margin-left: 290px;
+
+    width: calc(100% - 290px);
+
+    transition:
+        margin-left .30s ease,
+        width .30s ease;
+
+}
+
+
+body.sidebar-collapsed .main-content {
+
+    margin-left: 92px;
+
+    width: calc(100% - 92px);
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+.sidebar::-webkit-scrollbar {
+
+    width: 6px;
+
+}
+
+
+.sidebar::-webkit-scrollbar-thumb {
+
+    border-radius: 10px;
+
+}
+
+
+/* =========================================================
+   TRANSICIONES
+========================================================= */
+
+.sidebar,
+.sidebar-logo,
+.sidebar-logo img,
+.sidebar-menu,
+.sidebar-menu li a,
+.sidebar-menu li a span,
+.sidebar-footer,
+.sidebar-footer a {
+
+    transition:
+        width .30s ease,
+        height .30s ease,
+        padding .30s ease,
+        margin .30s ease,
+        gap .30s ease,
+        transform .30s ease,
+        background .20s ease;
+
+}
+
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+========================================================= */
+
+@media (max-width: 992px) {
+
+    .sidebar {
+
+        width: 92px;
+
+    }
+
+
+    .sidebar-logo {
+
+        height: 100px;
+
+    }
+
+
+    .sidebar-logo img {
+
+        width: 60px;
+        height: 60px;
+
+    }
+
+
+    .sidebar-logo h2,
+    .sidebar-logo span {
+
+        display: none;
+
+    }
+
+
+    .sidebar-menu {
+
+        padding: 28px 10px 20px;
+
+    }
+
+
+    .sidebar-menu li a {
+
+        justify-content: center;
+
+        gap: 0;
+
+        padding: 12px 5px;
+
+    }
+
+
+    .sidebar-menu li a span {
+
+        display: none;
+
+    }
+
+
+    .sidebar-menu li a i {
+
+        width: auto;
+
+        min-width: auto;
+
+    }
+.main-content {
+
+        margin-left: 92px;
+
+        width: calc(100% - 92px);
+
+    }
+
+}
+
+/* =========================================================
+   REGISTRO - MENÚ DESPLEGABLE
+========================================================= */
+
+.registro-dropdown {
+    position: relative;
+}
+
+.registro-dropdown-toggle {
+    width: 100%;
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 12px 18px;
+
+    background: transparent;
+    color: var(--text2);
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+
+    text-align: left;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        color .2s ease;
+}
+
+.registro-dropdown-toggle:hover {
+    background: var(--primary);
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.registro-dropdown-toggle > i:first-child {
+    width: 24px;
+    min-width: 24px;
+    text-align: center;
+    font-size: 19px;
+}
+
+.registro-dropdown-toggle > span {
+    flex: 1;
+    white-space: nowrap;
+}
+
+.registro-chevron {
+    width: auto !important;
+    min-width: auto !important;
+    font-size: 12px !important;
+    transition: transform .2s ease;
+}
+
+.registro-dropdown.open .registro-chevron {
+    transform: rotate(180deg);
+}
+
+.registro-submenu {
+    display: none;
+
+    list-style: none;
+
+    margin: 4px 0 5px 0;
+    padding: 0 0 0 18px;
+}
+
+.registro-dropdown.open .registro-submenu {
+    display: block;
+}
+
+.registro-submenu li {
+    margin: 3px 0;
+}
+
+.registro-submenu li a {
+    min-height: 43px !important;
+
+    display: flex !important;
+    align-items: center;
+
+    gap: 12px !important;
+
+    padding: 9px 12px !important;
+
+    color: var(--text3) !important;
+
+    border-left: 2px solid var(--border);
+
+    border-radius: 0 9px 9px 0 !important;
+
+    font-size: 13px !important;
+}
+
+.registro-submenu li a:hover {
+    background: rgba(37, 99, 235, .15) !important;
+
+    color: #ffffff !important;
+
+    border-left-color: var(--primary);
+
+    transform: translateX(3px);
+}
+
+.registro-submenu li a i {
+    width: 20px !important;
+    min-width: 20px !important;
+
+    font-size: 14px !important;
+}
+
+.registro-submenu li a span {
+    white-space: nowrap;
+}
+
+.sidebar.collapsed .registro-dropdown-toggle {
+    justify-content: center;
+
+    gap: 0;
+
+    padding: 12px 5px;
+}
+
+.sidebar.collapsed .registro-dropdown-toggle > span,
+.sidebar.collapsed .registro-chevron {
+    display: none;
+}
+
+.sidebar.collapsed .registro-submenu {
+    display: none !important;
+}
+
+.sidebar.collapsed .registro-dropdown-toggle > i:first-child {
+    width: auto;
+    min-width: auto;
+
+    font-size: 19px;
+}
+
+/* =========================================================
+   MENÚ OCULTO AUTOMÁTICAMENTE
+   El menú permanece contraído y se expande al pasar el mouse.
+========================================================= */
+
+.sidebar.collapsed {
+    width: 72px;
+    overflow-x: hidden;
+    transition: width .25s ease;
+}
+
+/* Al pasar el mouse, el menú aparece sobre el contenido */
+.sidebar.collapsed:hover {
+    width: 290px;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, .25);
+}
+
+.sidebar.collapsed:hover .sidebar-logo {
+    height: 185px;
+    padding: 15px 15px 20px;
+}
+
+.sidebar.collapsed:hover .sidebar-logo img {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 8px;
+}
+
+.sidebar.collapsed:hover .sidebar-logo h2,
+.sidebar.collapsed:hover .sidebar-logo span {
+    display: block;
+}
+
+.sidebar.collapsed:hover .sidebar-menu {
+    padding: 28px 14px 20px;
+}
+
+.sidebar.collapsed:hover .sidebar-menu li a {
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 12px 18px;
+}
+
+.sidebar.collapsed:hover .sidebar-menu li a span {
+    display: inline;
+}
+
+.sidebar.collapsed:hover .sidebar-menu li a i {
+    width: 24px;
+    min-width: 24px;
+    font-size: 19px;
+}
+
+.sidebar.collapsed:hover .sidebar-footer {
+    padding: 10px 14px 25px;
+}
+
+.sidebar.collapsed:hover .sidebar-footer a {
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 12px 18px;
+}
+
+.sidebar.collapsed:hover .sidebar-footer span {
+    display: inline;
+}
+
+.sidebar.collapsed:hover .sidebar-footer i {
+    width: 24px;
+    min-width: 24px;
+}
+
+/* Registro desplegable cuando el menú está visible */
+.sidebar.collapsed:hover .registro-dropdown-toggle {
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 12px 18px;
+}
+
+.sidebar.collapsed:hover .registro-dropdown-toggle > span,
+.sidebar.collapsed:hover .registro-chevron {
+    display: inline;
+}
+
+.sidebar.collapsed:hover .registro-dropdown.open .registro-submenu {
+    display: block !important;
+}
+
+/* El contenido NO se mueve cuando el menú aparece */
+body.sidebar-collapsed .main-content {
+    margin-left: 72px;
+    width: calc(100% - 72px);
+}
+

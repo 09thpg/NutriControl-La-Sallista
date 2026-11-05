@@ -1,0 +1,262 @@
+.page-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.page-header h2{
+    color:#ffffff;
+    font-size:34px;
+    font-weight:700;
+    margin:0;
+}
+
+.page-header p{
+    color:#94a3b8;
+    margin-top:8px;
+}
+
+.form-card{
+    background:#1f2937;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.form-label{
+    color:#ffffff;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.form-control,
+.form-select{
+    background:#111827;
+    border:1px solid #374151;
+    color:#ffffff;
+    border-radius:12px;
+    min-height:50px;
+    padding:12px 15px;
+}
+
+.form-control:focus,
+.form-select:focus{
+    background:#111827;
+    color:#ffffff;
+    border-color:#2563eb;
+    box-shadow:none;
+}
+
+.form-control::placeholder{
+    color:#94a3b8;
+}
+
+textarea.form-control{
+    min-height:160px;
+    resize:vertical;
+}
+
+.btn-success{
+    border-radius:12px;
+    padding:12px 24px;
+    font-weight:600;
+}
+
+.alert{
+    border:none;
+    border-radius:12px;
+}
+
+@media(max-width:768px){
+
+    .page-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .page-header h2{
+        font-size:28px;
+    }
+
+    .form-card{
+        padding:25px;
+    }
+
+}
+/* ==============================
+   MODO MANTENIMIENTO
+   ============================== */
+
+.maintenance-page {
+    min-height: 100vh;
+}
+
+.maintenance-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 8px;
+}
+
+.maintenance-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 24px;
+    margin-bottom: 22px;
+    border-radius: 18px;
+    background: #202b3d;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.maintenance-icon {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.maintenance-icon.is-active {
+    background: rgba(214, 69, 69, 0.14);
+    color: #ff7272;
+}
+
+.maintenance-icon.is-inactive {
+    background: rgba(46, 139, 87, 0.16);
+    color: #55c985;
+}
+
+.maintenance-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.maintenance-content h3 {
+    margin: 0 0 7px;
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.35;
+}
+
+.maintenance-content p {
+    margin: 0;
+    color: #aebbd0;
+    opacity: 1;
+    line-height: 1.55;
+}
+
+.maintenance-form-card {
+    max-width: 850px;
+}
+
+.maintenance-switch-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    border-radius: 14px;
+    background: rgba(0, 0, 0, 0.035);
+}
+
+.maintenance-switch-row strong,
+.maintenance-switch-row small {
+    display: block;
+}
+
+.maintenance-switch-row small {
+    margin-top: 4px;
+    opacity: 0.68;
+}
+
+.maintenance-switch {
+    position: relative;
+    width: 54px;
+    height: 30px;
+    flex: 0 0 auto;
+}
+
+.maintenance-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.maintenance-slider {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #c9c9c9;
+    transition: 0.25s;
+}
+
+.maintenance-slider::before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    left: 4px;
+    top: 4px;
+    border-radius: 50%;
+    background: #fff;
+    transition: 0.25s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.maintenance-switch input:checked + .maintenance-slider {
+    background: #d64545;
+}
+
+.maintenance-switch input:checked + .maintenance-slider::before {
+    transform: translateX(24px);
+}
+
+@media (max-width: 600px) {
+    .maintenance-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+
+.maintenance-user-message {
+    max-width: 850px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: #fff8e8;
+    border: 1px solid #f2dfae;
+    color: #6f5414;
+}
+
+.maintenance-user-message > i {
+    margin-top: 3px;
+    font-size: 1.15rem;
+}
+
+.maintenance-user-message strong,
+.maintenance-user-message p {
+    display: block;
+}
+
+.maintenance-user-message p {
+    margin: 5px 0 0;
+}
